@@ -12,7 +12,27 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            showAboutDialog(context: )
+            showDialog(context: context, builder: (context) {
+              return AlertDialog(
+                backgroundColor: Colors.amber,
+                title: const Text('Alert!'), 
+                content: const Text('Something Wrong'),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                     child: const Text('Cancle')
+                     ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                     child: const Text('Ok')
+                     ),   
+                ],
+              );
+            });
           },
           child: const Text('Click Me'),
           ),
